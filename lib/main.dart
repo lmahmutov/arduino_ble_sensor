@@ -61,7 +61,6 @@ class BluetoothOffScreen extends StatelessWidget {
   }
 }
 
-//
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -148,8 +147,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-List<int> tempList = [1, 2];
 
 class MyStatelessWidget extends StatelessWidget {
   MyStatelessWidget({Key key}) : super(key: key);
