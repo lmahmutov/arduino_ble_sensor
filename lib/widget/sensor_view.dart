@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:arduino_ble_sensor/model/sensor_data.dart';
 import 'package:flutter/material.dart';
-import 'package:timeago/timeago.dart' as timeago;
 
 class SensorView extends StatefulWidget {
   final SensorData sensorData;
@@ -60,7 +59,7 @@ class _SensorViewState extends State<SensorView> {
           ),
           ListTile(
             leading: Icon(Icons.access_time, size: 55),
-            title: Text('Last update: $_lastTime'),
+            title: Text('Last update: $_lastTime seconds ago'),
           ),
         ],
       ),
@@ -69,7 +68,10 @@ class _SensorViewState extends State<SensorView> {
 
   void _updateLastTime(Timer timer) {
     setState(() {
-      _lastTime = timeago.format(widget.sensorData.lastTime);
+      _lastTime = DateTime.now()
+          .difference(widget.sensorData.lastTime)
+          .inSeconds
+          .toString();
     });
   }
 }
