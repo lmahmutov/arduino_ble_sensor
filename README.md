@@ -1,4 +1,4 @@
-# arduino ble sensor
+# Flutter project for arduino ble sensor
 
 Simple Flutter project for Arduino Ble sensor.
 
